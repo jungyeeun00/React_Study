@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
+import './Subject.css'
 
 class Subject extends Component{
     render(){
       console.log('Subjects  render');
 
       return (
-        <header>
+        <header className="Subject">
           <h1><a href="/" onClick={function (e) {
             e.preventDefault();
             this.props.onChangePage();

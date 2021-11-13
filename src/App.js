@@ -89,13 +89,6 @@ class App extends Component{
           this.setState({mode:'welcome'})
         }.bind(this)}
         ></Subject>
-        <TOC onChangePage={function (id) {
-          this.setState({
-            mode:'read',
-            selected_content_id:Number(id)
-          })
-        }.bind(this)}
-         data={this.state.contents}></TOC>
         <Control onChangeMode={function (_mode) {
           if(_mode==='delete'){
             if(window.confirm('really?')){
@@ -120,6 +113,13 @@ class App extends Component{
             });
           }
         }.bind(this)}></Control>
+        <TOC onChangePage={function (id) {
+          this.setState({
+            mode:'read',
+            selected_content_id:Number(id)
+          })
+        }.bind(this)}
+         data={this.state.contents}></TOC>
         {this.getContent()}
       </div>
     );

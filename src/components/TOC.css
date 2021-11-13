@@ -1,0 +1,44 @@
+.TOC{
+    position: fixed;
+    margin: 0 auto;
+    top: 400px;
+    left: 0;
+    right: 0;
+    padding: 10px;
+    width: 250px;
+    height: 250px;
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-color: rgba(150, 150, 150, 0.7);
+    color: #333;
+}
+
+.TOC-list{
+    list-style-type: none;
+    text-align: left;
+    padding: 0 10px;
+}
+
+.TOC-listitems{
+    margin: 10px;
+}
+
+.TOC-hyper{
+    text-decoration: none;
+    color: gray;
+}
+
+.TOC-hyper:hover{
+    text-decoration: underline;
+    color: black;
+    font-weight: bold;
+}
+
+.TOC-checkbox{
+    margin: 0 10px;
+}
+
+.X-btn{
+    background-color: transparent;
+    border: none;
+}

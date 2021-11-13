@@ -1,0 +1,21 @@
+.input-title{
+    background-color: transparent;
+    border: none;
+    border-bottom: 0.7px solid white;
+    padding-left: 10px;
+    font-size: 16pt;
+    margin-bottom: 10px;
+}
+
+.input-desc{
+    background-color: transparent;
+    border:none;
+    border-left: 1px solid white;
+    padding: 10px;
+    font-size: 16pt;
+}
+
+.submit-btn{
+    background-color: transparent;
+    border: 1px solid white;
+}

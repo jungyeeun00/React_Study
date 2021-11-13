@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
+import './CreateContent.css'
 
 class CreateContent extends Component{
     render(){
       console.log('Content render');
       return(
-        <article>
-          <h2>Create</h2>
+        <div className="Create">
           <form action="/create_process" method="post" onSubmit={function (e) {
             e.preventDefault();
             this.props.onSubmit(
@@ -14,15 +14,15 @@ class CreateContent extends Component{
             );
             alert('submit!!!!!!!');
           }.bind(this)}>
-            <p><input type="text" name="title" placeholder="title"></input></p>
+            <p><input className="input-title" type="text" name="title" placeholder="title" size="13"></input></p>
             <p>
-              <textarea name="desc" placeholder="description"></textarea>
+              <textarea className="input-desc" name="desc" placeholder="description" rows="3" cols="15"></textarea>
             </p>
             <p>
-              <input type="submit"></input>
+              <input className="submit-btn" type="submit" value="구려."></input>
             </p>
           </form>
-        </article>
+        </div>
       )
     }
   }
