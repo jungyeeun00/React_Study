@@ -23,7 +23,10 @@ class TOC extends Component{
                 this.props.onChangePage(id);
               }.bind(this, data[i].id)}
               >{data[i].title}</a>
-              <button className="X-btn">❌</button>
+              <input className="X-btn" onClick={function (e) {
+                e.preventDefault();
+                this.props.onChangeMode('delete');
+              }.bind(this)}type="button" value="❌"/>
             </li>);
             i++;
         }

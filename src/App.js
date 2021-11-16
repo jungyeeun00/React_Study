@@ -15,8 +15,8 @@ class App extends Component{
     this.state = {
       mode:'welcome',
       selected_content_id:2,
-      welcome:{title:'Welcome', desc:'Hello, React!!'},
-      subject:{title:'WEB', sub:'World Wide Web'},
+      welcome:{title:'Welcome', desc:'check your list!'},
+      subject:{title:'To-Do list', sub:'check your list!'},
       contents:[
         {id:1, title:'HTML', desc:'HTML is HyperText'},
         {id:2, title:'CSS', desc:'CSS is for design'},
@@ -90,6 +90,30 @@ class App extends Component{
         }.bind(this)}
         ></Subject>
         <Control onChangeMode={function (_mode) {
+          // if(_mode==='delete'){
+          //   if(window.confirm('really?')){
+          //     var _contents = Array.from(this.state.contents);
+          //     var i = 0;
+          //     while(i<this.state.contents.length){
+          //       if(_contents[i].id === this.state.selected_content_id){
+          //         _contents.splice(i, 1);
+          //         break;
+          //       }
+          //       i++;
+          //     }
+          //     this.setState({
+          //       mode:'welcome',
+          //       contents:_contents
+          //     });
+          //     alert("deleted!");
+          //   }
+          // }else{
+            this.setState({
+              mode:_mode
+            });
+          // }
+        }.bind(this)}></Control>
+        <TOC onChangeMode={function (_mode) {
           if(_mode==='delete'){
             if(window.confirm('really?')){
               var _contents = Array.from(this.state.contents);
@@ -112,8 +136,8 @@ class App extends Component{
               mode:_mode
             });
           }
-        }.bind(this)}></Control>
-        <TOC onChangePage={function (id) {
+        }.bind(this)}
+        onChangePage={function (id) {
           this.setState({
             mode:'read',
             selected_content_id:Number(id)

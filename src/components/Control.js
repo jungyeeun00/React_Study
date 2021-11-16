@@ -5,20 +5,16 @@ class Control extends Component{
       console.log('Subjects  render');
 
       return (
-        <ul>
-          <li><a href="/create" onClick={function (e) {
+        <div>
+          <input className="submit-btn" type="button" value="➕" onClick={function (e) {
             e.preventDefault();
             this.props.onChangeMode('create');
-          }.bind(this)}>create</a></li>
-          <li><a href="/update" onClick={function (e) {
+          }.bind(this)}/>
+          <input className="submit-btn" type="button" value="📝" onClick={function (e) {
             e.preventDefault();
             this.props.onChangeMode('update');
-          }.bind(this)}>update</a></li>
-          <li><input  onClick={function (e) {
-            e.preventDefault();
-            this.props.onChangeMode('delete');
-          }.bind(this)}type="button" value="delete"/></li>
-        </ul>
+          }.bind(this)}/>
+        </div>
       );
     }
   }

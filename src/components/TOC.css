@@ -1,7 +1,7 @@
 .TOC{
     position: fixed;
     margin: 0 auto;
-    top: 400px;
+    top: 290px;
     left: 0;
     right: 0;
     padding: 10px;
@@ -25,7 +25,7 @@
 
 .TOC-hyper{
     text-decoration: none;
-    color: gray;
+    color: white;
 }
 
 .TOC-hyper:hover{

@@ -1,3 +1,10 @@
 .Subject{
-    background-color: aliceblue;
+    margin: 10px;
+    padding:0;
+}
+
+.Subject-title{
+    text-decoration: none;
+    font-weight: bold;
+    color: darkgreen;
 }

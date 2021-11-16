@@ -1,9 +1,24 @@
+.Create{
+    position: fixed;
+    margin: 0 auto;
+    top: 100px;
+    left: 0;
+    right: 0;
+    width: 250px;
+    /* height: 230px; */
+    box-sizing: border-box;
+    border-radius: 10px;
+    background-color: rgba(150, 150, 150, 0.7);
+    color: #333;
+}
+
 .input-title{
+    margin: 5px;
     background-color: transparent;
     border: none;
     border-bottom: 0.7px solid white;
     padding-left: 10px;
-    font-size: 16pt;
+    font-size: 14pt;
     margin-bottom: 10px;
 }
 
@@ -12,10 +27,18 @@
     border:none;
     border-left: 1px solid white;
     padding: 10px;
-    font-size: 16pt;
+    margin-top: 5px;
+    font-size: 11pt;
+    margin-bottom: 0;
 }
 
 .submit-btn{
     background-color: transparent;
     border: 1px solid white;
+    margin: 0 5px;
+    margin-bottom: 8px;
+}
+
+.submit-btn-margin{
+    margin: 0;
 }

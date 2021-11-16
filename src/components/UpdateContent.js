@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './UpdateContent.css';
 
 class UpdateContent extends Component{
   constructor(props){
@@ -17,8 +18,8 @@ class UpdateContent extends Component{
       console.log(this.props.data);
       console.log('UpdateContent render');
       return(
-        <article>
-          <h2>Update</h2>
+        <div className="update">
+          <h3 className="update-header">update</h3>
           <form action="/create_process" method="post" onSubmit={function (e) {
             e.preventDefault();
             this.props.onSubmit(
@@ -29,24 +30,20 @@ class UpdateContent extends Component{
             alert('submit!!!!!!!');
           }.bind(this)}>
             <input type="hidden" name="id" value={this.state.id}/>
-            <p><input
+            <input className="input-title"
                   type="text"
                   name="title"
                   placeholder="title"
+                  size="13"
                   value={this.state.title}
                   onChange={this.inputFormHandler}>
                 </input>
-            </p>
-            <p>
-              <textarea name="desc" placeholder="description" value={this.state.desc}
-                onChange={this.inputFormHandler}>
+              <textarea className="input-desc" name="desc" placeholder="description" rows="3" cols="19"
+               value={this.state.desc} onChange={this.inputFormHandler}>
               </textarea>
-            </p>
-            <p>
-              <input type="submit"></input>
-            </p>
+              <p className="submit-btn-margin"><input className="submit-btn" type="submit" value=" ✔ "></input></p>
           </form>
-        </article>
+        </div>
       )
     }
   }
