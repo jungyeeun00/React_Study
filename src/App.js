@@ -18,9 +18,9 @@ class App extends Component{
       welcome:{title:'Welcome', desc:'check your list!'},
       subject:{title:'To-Do list', sub:'check your list!'},
       contents:[
-        {id:1, title:'HTML', desc:'HTML is HyperText'},
-        {id:2, title:'CSS', desc:'CSS is for design'},
-        {id:3, title:'Javascript', desc:'Javascript is for interactive'}
+        {id:1, title:'잠자기', desc:'끝내주게 자기'},
+        {id:2, title:'먹기', desc:'끝내주게 먹기'},
+        {id:3, title:'숨쉬기', desc:'끝내주게 숨쉬기'}
       ]
     }
   }
@@ -78,6 +78,42 @@ class App extends Component{
 
     return _article;
   }
+  getBtnContent(){
+    var _title, _desc, _article = null;
+    if(this.state.mode === 'create'){
+      _article = <CreateContent onSubmit={function (_title, _desc) {
+        this.max_content_id = this.max_content_id+1;
+        var _contents = Array.from(this.state.contents)
+        _contents.push(
+          {id:this.max_content_id, title:_title, desc:_desc}
+        );
+        this.setState({
+          contents:_contents,
+          mode:'read',
+          selected_content_id:this.max_content_id
+        })
+      }.bind(this)}></CreateContent>
+    }else if(this.state.mode === 'update'){
+      var _content = this.getReadContent();
+      _article = <UpdateContent data={_content} onSubmit={function (_id, _title, _desc) {
+        var _contents = Array.from(this.state.contents);
+        var i=0;
+        while(i<_contents.length){
+          if(_contents[i].id===_id){
+            _contents[i] = {id:_id, title:_title, desc:_desc};
+            break;
+          }
+          i++;
+        }
+        this.setState({
+          contents:_contents,
+          mode:'read'
+        })
+      }.bind(this)}></UpdateContent>
+    }
+
+    return _article;
+  }
   render(){
     console.log('App render');
     console.log('render', this);
@@ -113,6 +149,18 @@ class App extends Component{
             });
           // }
         }.bind(this)}></Control>
+        <CreateContent onSubmit={function (_title, _desc) {
+          this.max_content_id = this.max_content_id+1;
+          var _contents = Array.from(this.state.contents)
+          _contents.push(
+            {id:this.max_content_id, title:_title, desc:_desc}
+          );
+          this.setState({
+            contents:_contents,
+            mode:'read',
+            selected_content_id:this.max_content_id
+          })
+        }.bind(this)}></CreateContent>
         <TOC onChangeMode={function (_mode) {
           if(_mode==='delete'){
             if(window.confirm('really?')){

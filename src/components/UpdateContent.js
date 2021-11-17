@@ -19,7 +19,6 @@ class UpdateContent extends Component{
       console.log('UpdateContent render');
       return(
         <div className="update">
-          <h3 className="update-header">update</h3>
           <form action="/create_process" method="post" onSubmit={function (e) {
             e.preventDefault();
             this.props.onSubmit(
